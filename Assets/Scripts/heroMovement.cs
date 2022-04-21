@@ -24,7 +24,7 @@ public class heroMovement : MonoBehaviour
         targetPosition = transform.position;
         direction = Direction.down;
     }
-
+    
     void Update (){
         Vector2 axisDirection = new Vector2(Input.GetAxis("Horizontal2"),Input.GetAxis("Vertical2"));
         anim.SetInteger("direction", (int)direction);
@@ -59,15 +59,13 @@ public class heroMovement : MonoBehaviour
 
         if (Physics2D.OverlapCircle(transform.position, 0.1f, casilla))
         {
-            Debug.Log("Esta en una casilla");
+            
             //Obtener la colision
             Collider2D col = Physics2D.OverlapCircle(transform.position, 0.1f, casilla);
             
             tile=col.GetComponent<Tile>();
             tile.EnemyColor();
             
-        }else{
-            Debug.Log("No esta en una casilla");
         }
 
 

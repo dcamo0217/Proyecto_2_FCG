@@ -2,10 +2,10 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class Timer : MonoBehaviour
 {
-    private float timeDuration = 2f * 60f;
+    public  GameObject Inner;
+    private float timeDuration = 6f;
 
     private float _time;
 
@@ -15,6 +15,9 @@ public class Timer : MonoBehaviour
     [SerializeField] private TextMeshProUGUI FirstSecond;
     [SerializeField] private TextMeshProUGUI SecondSecond;
 
+    public TextMeshProUGUI textPLayer1;
+    public TextMeshProUGUI textPLayer2;
+    public TextMeshProUGUI winner;
     private float flashtimer;
     private float flashduration = 1f;
     void Start()
@@ -52,6 +55,21 @@ public class Timer : MonoBehaviour
     private void flash() {
         if (_time != 0) {
             _time = 0;
+            //SceneManager.LoadScene("EndGameMenu");
+            Inner.GetComponent<GridManager>().ContColor();
+            textPLayer1.text = "P1: " + Inner.GetComponent<GridManager>().getP1();
+            textPLayer2.text = "P2: " + Inner.GetComponent<GridManager>().getP2();
+            if (Inner.GetComponent<GridManager>().getP1() > Inner.GetComponent<GridManager>().getP2())
+            {
+                winner.text = "Player 1 GAna";
+            }
+            else if (Inner.GetComponent<GridManager>().getP1() < Inner.GetComponent<GridManager>().getP2())
+            {
+                winner.text = "Player 2 Gana";
+            }
+            else {
+                winner.text = "Empate";
+            }
             UptadeTimerDisplay(_time);
         }
         if (flashtimer <= 0)
@@ -76,5 +94,8 @@ public class Timer : MonoBehaviour
         Separator.enabled = enabled;
         FirstSecond.enabled = enabled;
         SecondSecond.enabled = enabled;
+        textPLayer1.enabled = enabled;
+        textPLayer2.enabled = enabled;
+        winner.enabled = enabled;
     }
 }

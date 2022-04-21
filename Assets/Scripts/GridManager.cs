@@ -12,11 +12,10 @@ public class GridManager : MonoBehaviour
     [SerializeField] private int _width, _heigh;
     [SerializeField] private Tile _tile;
     [SerializeField] private Transform _cam;
-    private int tilep1;
+
     void Start()
     {
         GenerateGrid(); 
-        tilep1 = 0;
     }
     void GenerateGrid() { 
     for (var x = 0; x < _width; x++)
@@ -47,7 +46,7 @@ public class GridManager : MonoBehaviour
         
     }
 
-    public void ContColor()
+    public void  ContColor()
     {
         foreach (var item in _tiles)
         {
@@ -61,5 +60,14 @@ public class GridManager : MonoBehaviour
             }
             
         }
+        
+    }
+    public int getP1()
+    {
+        return Player1Tiles;
+    }
+    public int getP2()
+    {
+        return Player2Tiles;
     }
 }
