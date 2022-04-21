@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public  GameObject Inner;
-    private float timeDuration = 6f;
+    private float timeDuration = 15f;
 
     private float _time;
 
@@ -57,15 +57,15 @@ public class Timer : MonoBehaviour
             _time = 0;
             //SceneManager.LoadScene("EndGameMenu");
             Inner.GetComponent<GridManager>().ContColor();
-            textPLayer1.text = "P1: " + Inner.GetComponent<GridManager>().getP1();
-            textPLayer2.text = "P2: " + Inner.GetComponent<GridManager>().getP2();
+            textPLayer1.text = "Cazador: " + Inner.GetComponent<GridManager>().getP1();
+            textPLayer2.text = "Oso: " + Inner.GetComponent<GridManager>().getP2();
             if (Inner.GetComponent<GridManager>().getP1() > Inner.GetComponent<GridManager>().getP2())
             {
-                winner.text = "Player 1 GAna";
+                winner.text = "Cazador Gana";
             }
             else if (Inner.GetComponent<GridManager>().getP1() < Inner.GetComponent<GridManager>().getP2())
             {
-                winner.text = "Player 2 Gana";
+                winner.text = "Oso Gana";
             }
             else {
                 winner.text = "Empate";
