@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     public  GameObject Inner;
     private float timeDuration = 15f;
-
+    public Button _Botonreinicio;
     private float _time;
 
     [SerializeField] private TextMeshProUGUI FirstMinute;
@@ -59,6 +59,7 @@ public class Timer : MonoBehaviour
             Inner.GetComponent<GridManager>().ContColor();
             textPLayer1.text = "Cazador: " + Inner.GetComponent<GridManager>().getP1();
             textPLayer2.text = "Oso: " + Inner.GetComponent<GridManager>().getP2();
+            
             if (Inner.GetComponent<GridManager>().getP1() > Inner.GetComponent<GridManager>().getP2())
             {
                 winner.text = "Cazador Gana";
