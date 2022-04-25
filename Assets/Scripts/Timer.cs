@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     public  GameObject Inner;
-    private float timeDuration = 15f;
+    private float timeDuration = 55f;
     public Button _Botonreinicio;
     private float _time;
 

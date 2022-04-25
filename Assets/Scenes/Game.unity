@@ -1246,6 +1246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Inner: {fileID: 1076707978}
+  _Botonreinicio: {fileID: 0}
   FirstMinute: {fileID: 2087713453}
   SecondMinute: {fileID: 1843013136}
   Separator: {fileID: 982266384}
@@ -1611,7 +1612,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1570356258
 RectTransform:
   m_ObjectHideFlags: 0
